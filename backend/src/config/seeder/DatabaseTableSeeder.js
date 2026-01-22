@@ -5,6 +5,5 @@ class DatabaseTableSeeder{
         UserTableSeeder.run();
 
     }
-
 }
 export default DatabaseTableSeeder;
