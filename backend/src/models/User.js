@@ -57,6 +57,11 @@ userSchema.pre("save", async function () {
 
 userSchema.methods.toJSON = function () {
   const obj = this.toObject();
+  if(obj.image){
+    obj.image = `${process.env.PUBLIC_URL}/users/${obj.image}`;
+  }else{
+    obj.image = `${process.env.PUBLIC_URL}/icons/not-found.png`;
+  }
   delete obj.password;
   return obj;
 }

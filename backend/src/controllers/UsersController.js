@@ -11,8 +11,12 @@ class UsersController {
   }
 
   async insert(req, res) {
-    await User.create(req.body);
-    res.send("User inserted");
+    let image="";
+    if (req.file) {
+      image = req.file.filename;
+    }
+    await User.create({...req.body,image:image});
+    return res.status(201).json({ message: "User created successfully" });
   }
   update(req, res) {
     res.send("Update user " + req.params.id);
