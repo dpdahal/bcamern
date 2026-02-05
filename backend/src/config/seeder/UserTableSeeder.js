@@ -27,10 +27,7 @@ class UserTableSeeder{
                 await User.create(data);
                 console.log(`User with email ${data.email} created.`);
             }
-
         });
-    
-
     }
 }
 
