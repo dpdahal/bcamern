@@ -5,12 +5,16 @@ import DashboardComponent from "../components/Admin/DashboardComponent";
 import AdminMiddleware from "../middleware/AdminMiddleware";
 import UserListComponents from "../components/Admin/Users/UserListComponents";
 import PageNotFoundComponents from "../components/Errors/PageNotFoundComponents";
+import RegisterComponents from "../components/Auth/RegisterComponents";
+import LoginComponents from "../components/Auth/LoginComponents";
 function RouteComponents() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<HomeComponents />} />
         <Route path="/about" element={<AboutComponent />} />
+        <Route path="/login" element={<LoginComponents />} />
+        <Route path="/register" element={<RegisterComponents />} />
         {/* ============Admin Route============== */}
         <Route path="admin" element={<AdminMiddleware />}>
           <Route path="admin" element={<DashboardComponent />} />
